@@ -40,7 +40,9 @@
     <script defer src="./images/app.2ed71520030bce91499d.js"></script>
     <link rel="stylesheet" href="./style.css">
     <script defer src="./images/script.zlRw1O4MUO2N5jT7r7Nt.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript">
   window.addEventListener('load', function () {
     document.querySelectorAll('pre[id^="code"]').forEach(function (e, index) {
@@ -96,8 +98,8 @@
                 <s_cover name="list">
                   <section class="flex flex-col items-center px-4 lg:px-0 lg:w-idx lg:mx-auto" data-mode="list">
                     <div class="text-3xl font-bold text-h-600 dark:text-h-200 my-10 empty:my-10 lg:my-20">[##_cover_title_##]</div>
-                    <div class="list">
-                      <s_cover_item>
+                    <div class="list"> <!-- posts-->
+                      <s_cover_item> 
                         <div class="post">
                           <s_cover_item_thumbnail><a class="thumbnail" href="[##_cover_item_url_##]"><img class="lazyload object-cover bg-h-100" data-src="[##_cover_item_thumbnail_##]" data-sizes="auto" alt=""></a></s_cover_item_thumbnail>
                           <s_cover_item_article_info>
@@ -581,11 +583,11 @@
             <s_sidebar>
               <s_sidebar_element><!-- 프로필-->
                 <div class="sidebar-element">
-                  <div class="text-center flex flex-col items-center my-4"><img class="rounded-full" src="[##_image_##]" width="100" height="100" alt="[##_blogger_##]">
+                  <!-- <div class="text-center flex flex-col items-center my-4"><img class="rounded-full" src="[##_image_##]" width="100" height="100" alt="[##_blogger_##]"> --> <!-- blogger image-->
                     <div><a class="link_tit inline-block pt-4 pb-1 font-medium" href="[##_blog_link_##]">[##_title_##]</a></div>
                     <div class="text-h-400 text-sm">[##_blogger_##]</div>
                   </div>
-                </div>
+                <!-- </div> -->
               </s_sidebar_element>
               <s_sidebar_element><!-- 방문자 수-->
                 <div class="sidebar-element">
@@ -609,6 +611,25 @@
                   </div>
                 </div>
               </s_sidebar_element>
+              <s_sidebar_element> <!-- link-->
+                <div class="sidebar-element">
+                  <div class="overflow-hidden flex justify-between" id="counter">
+                    <div>
+                      <div class="text-left">
+                        <div class="title">Github</div>
+                      </div>
+                      <div class="flex gap-x-2 text-right">
+                        <div class="flex gap-x-3">
+                          <a href="https://github.com/logicallaw">
+                            <span class="text-hidden" style="font-size:20px">github</span>
+                            <i class="fa fa-github" aria-hidden="true" style="font-size:36px"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </s_sidebar_element>
               <s_sidebar_element><!-- 검색-->
                 <div class="sidebar-element">
                   <s_search>
@@ -621,15 +642,15 @@
                   <div id="category" x-data="category">[##_category_list_##]</div>
                 </div>
               </s_sidebar_element>
-              <s_sidebar_element><!-- 블로그 메뉴-->
-                <div class="sidebar-element">
-                  <div id="blogmenu">
-                    <h2>블로그 메뉴</h2>[##_blog_menu_##]
-                  </div>
-                </div>
-              </s_sidebar_element>
-              <s_sidebar_element><!-- 공지사항-->
-                <div class="sidebar-element">
+              <!-- <s_sidebar_element> --> <!-- 블로그 메뉴-->
+                <!-- <div class="sidebar-element"> -->
+                  <!-- <div id="blogmenu"> -->
+                    <!-- <h2>블로그 메뉴</h2>[##_blog_menu_##] -->
+                  <!-- </div> -->
+                <!-- </div> -->
+              <!-- </s_sidebar_element> -->
+              <!-- <s_sidebar_element> --> <!-- 공지사항-->
+                <!-- <div class="sidebar-element">
                   <div>
                     <h2><a class="link_tit" href="/notice">공지사항</a></h2>
                     <s_rct_notice>
@@ -641,7 +662,7 @@
                     </s_rct_notice>
                   </div>
                 </div>
-              </s_sidebar_element>
+              </s_sidebar_element> -->
               <s_sidebar_element><!-- 인기 글-->
                 <div class="sidebar-element">
                   <div>
@@ -659,8 +680,8 @@
                   </div>
                 </div>
               </s_sidebar_element>
-              <s_sidebar_element><!-- 태그-->
-                <div class="sidebar-element">
+              <!-- <s_sidebar_element> --> <!-- 태그-->
+                <!-- <div class="sidebar-element">
                   <div>
                     <h2><a class="link_tit" href="/tag">태그</a></h2>
                     <ul class="flex flex-col gap-y-4 text-sm">
@@ -670,9 +691,9 @@
                     </ul>
                   </div>
                 </div>
-              </s_sidebar_element>
-              <s_sidebar_element><!-- 최근 댓글-->
-                <div class="sidebar-element">
+              </s_sidebar_element> -->
+              <!-- <s_sidebar_element> --> <!-- 최근 댓글-->
+                <!-- <div class="sidebar-element">
                   <div>
                     <h2>최근 댓글</h2>
                     <ul class="flex flex-col gap-y-4">
@@ -688,9 +709,9 @@
                     </ul>
                   </div>
                 </div>
-              </s_sidebar_element>
-              <s_sidebar_element><!-- 최근 글-->
-                <div class="sidebar-element">
+              </s_sidebar_element> -->
+              <!-- <s_sidebar_element> --> <!-- 최근 글-->
+                <!-- <div class="sidebar-element">
                   <div>
                     <h2>최근 글</h2>
                     <ul class="flex flex-col gap-y-4 text-sm">
@@ -705,7 +726,7 @@
                     </ul>
                   </div>
                 </div>
-              </s_sidebar_element>
+              </s_sidebar_element> -->
             </s_sidebar>
             <div class="sidebar-element">
               <div class="text-h-400" id="copyright">
@@ -725,15 +746,15 @@ hELLO 는 무료인 만큼, 링크의 주소는 반드시 지켜주시기 바랍
           <div class="w-9 h-9"><button class="subscription flex justify-center items-center w-9 h-9 outline-0 rounded-full bg-h-200 text-h-500 hover:bg-h-300 dark:text-h-200 dark:bg-h-700 dark:hover:bg-h-600 btn_menu_toolbar btn_subscription #subscribe" x-data="{ subscribed: T.config.SUBSCRIPTION.isConnected }" x-show='T.config.ROLE !== "owner" && /^(.*tistory\.com)$/.test(location.hostname)' :data-blog-id="T.config.BLOG.id" :data-url="TistoryBlog.tistoryUrl" @click="subscribed = ! subscribed"><span class="text-hidden">구독하기</span><i class="fa-star text-sm" :class='subscribed ? "fa-solid" : "fa-regular"'></i></button></div>
         </div>
         <div class="flex justify-end px-4 w-full box-border fixed text-sm z-30 bottom-3 xl:bottom-4 <s_if_var_sidebar>xl:w-c</s_if_var_sidebar>" id="bottom">
-        <div class="flex gap-x-3">
+          <div class="flex gap-x-3">
           <a href="https://logicallaw.tistory.com/manage">
-            <span class="text-hidden">관리자</span>
-            <i class="fa-solid fa-lock text-base"></i>
-          </a>
-          <a href="https://logicallaw.tistory.com/manage/entry/post">
-            <span class="text-hidden">글쓰기</span>
-            <i class="fa-solid fa-pencil text-base"></i>
-          </a>
+              <span class="text-hidden">관리자</span>
+              <i class="fa-solid fa-lock text-base"></i>
+            </a>
+            <a href="https://logicallaw.tistory.com/manage/entry/post">
+              <span class="text-hidden">글쓰기</span>
+              <i class="fa-solid fa-pencil text-base"></i>
+            </a>
           <button x-data="theme" @click="toggle">
             <span class="text-hidden">테마</span>
               <i class="fa-solid fa-moon text-base"></i>
@@ -746,23 +767,34 @@ hELLO 는 무료인 만큼, 링크의 주소는 반드시 지켜주시기 바랍
       </div>
     </s_t3>
     <script>
-      $(function() {
-          var myurl = window.location.origin.split('/');
-          $(window).on('load', function() {
-              if ($('.info_profile .txt_id[href$="' + myurl[2] + '"]').length) {
-                  $('.owner').show();
-              } else {
-                  $('.owner').hide();
-              }
-          });
-      });
-  </script>
+    $(function() {
+        var myurl = window.location.origin.split('/');
+        $(window).on('load', function() {
+            if ($('.info_profile .txt_id[href$="' + myurl[2] + '"]').length) {
+                $('.owner').show();
+            } else {
+                $('.owner').hide();
+            }
+        });
+    });
+</script>
   <script defer src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
   <script>
       window.addEventListener('load', ()=>{
         hljs.initLineNumbersOnLoad()
       })
   </script>
+  <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+   
   </body>
+
 
 </html>
